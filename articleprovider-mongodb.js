@@ -3,6 +3,7 @@ var Connection = require('mongodb').Connection;
 var Server = require('mongodb').Server;
 var BSON = require('mongodb').BSON;
 var ObjectID = require('mongodb').ObjectID;
+var fs = require('fs');
 
 ArticleProvider = function(host, port) {
   this.db= new Db(process.env.OPENSHIFT_APP_NAME, new Server(process.env.OPENSHIFT_MONGODB_DB_HOST, parseInt(process.env.OPENSHIFT_MONGODB_DB_PORT), {auto_reconnect: true}, {}));
