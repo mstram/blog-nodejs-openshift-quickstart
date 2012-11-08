@@ -25,7 +25,10 @@
   },
 
   "dependencies": {
-    "express": "*"
+    "express": "*",
+    "jade": "*",
+    "stylus": "*",
+    "mongodb": "*"
   },
   "devDependencies": {},
   "bundleDependencies": [],
