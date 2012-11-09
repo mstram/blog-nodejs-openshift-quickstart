@@ -7,11 +7,13 @@ var fs = require('fs');
 
 ArticleProvider = function(host, port) {
   this.db= new Db(process.env.OPENSHIFT_APP_NAME, new Server("127.7.98.129", 27017, {auto_reconnect: true}));
-  this.db.authenticate("admin", "w6brcBiU25LE", {authdb: "admin"},  function(err, res){
+  this.db.open(function(err,db){
+  	if(err) throw err;
+  	this.db.authenticate("admin", "w6brcBiU25LE", {authdb: "admin"},  function(err, res){
         if(err){ throw err };
         callback();
       });
-  this.db.open(function(){});
+  });
 };
 
 //getCollection
