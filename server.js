@@ -72,5 +72,5 @@ app.post('/blog/addComment', function(req, res) {
            res.redirect('/blog/' + req.param('_id'))
        });
 });
-
-app.listen(8080);
+var port    = parseInt(process.env.OPENSHIFT_INTERNAL_PORT) || 8080;
+app.listen(port);
