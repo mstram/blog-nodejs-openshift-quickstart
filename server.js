@@ -73,4 +73,7 @@ app.post('/blog/addComment', function(req, res) {
        });
 });
 var port    = parseInt(process.env.OPENSHIFT_INTERNAL_PORT) || 8080;
-app.listen(port);
+var ipaddr  = process.env.OPENSHIFT_INTERNAL_IP;
+app.listen(port,ipaddr,function(){
+	console.log('Node server started')
+});
