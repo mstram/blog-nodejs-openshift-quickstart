@@ -11,7 +11,7 @@ ArticleProvider = function(host, port) {
   	if(err) throw err;
   	db.authenticate("admin", "w6brcBiU25LE", {authdb: "admin"},  function(err, res){
     if(err){ throw err };
-        callback();
+        
       });
   });
 };
